@@ -1,0 +1,22 @@
+# Copyright 2021-2023 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+image: "python:3.7"
+
+.build-vdk-postgres:
+  variables:
+    PLUGIN_NAME: vdk-postgres
+  extends: .build-plugin-dind
+
+build-py37-vdk-postgres:
+  extends: .build-vdk-postgres
+  image: "python:3.7"
+
+build-py311-vdk-postgres:
+  extends: .build-vdk-postgres
+  image: "python:3.11"
+
+release-vdk-postgres:
+  variables:
+    PLUGIN_NAME: vdk-postgres
+  extends: .release-plugin

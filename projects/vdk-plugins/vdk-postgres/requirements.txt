@@ -1,0 +1,9 @@
+
+# testing requirements
+click
+docker-compose
+psycopg2-binary
+pytest-docker
+tabulate
+vdk-core
+vdk-test-utils

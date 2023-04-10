@@ -1,0 +1,22 @@
+# Copyright 2021-2023 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+image: "python:3.7"
+
+.build-vdk-test-utils:
+  variables:
+    PLUGIN_NAME: vdk-test-utils
+  extends: .build-plugin
+
+build-py37-vdk-test-utils:
+  extends: .build-vdk-test-utils
+  image: "python:3.7"
+
+build-py311-vdk-test-utils:
+  extends: .build-vdk-test-utils
+  image: "python:3.11"
+
+release-vdk-test-utils:
+  variables:
+    PLUGIN_NAME: vdk-test-utils
+  extends: .release-plugin

@@ -1,0 +1,22 @@
+# Copyright 2021-2023 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+image: "python:3.7"
+
+.build-vdk-greenplum:
+  variables:
+    PLUGIN_NAME: vdk-greenplum
+  extends: .build-plugin-dind
+
+build-py37-vdk-greenplum:
+  extends: .build-vdk-greenplum
+  image: "python:3.7"
+
+build-py311-vdk-greenplum:
+  extends: .build-vdk-greenplum
+  image: "python:3.11"
+
+release-vdk-greenplum:
+  variables:
+    PLUGIN_NAME: vdk-greenplum
+  extends: .release-plugin

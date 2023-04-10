@@ -1,0 +1,22 @@
+# Copyright 2021-2023 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+image: "python:3.7"
+
+.build-vdk-properties-fs:
+  variables:
+    PLUGIN_NAME: vdk-properties-fs
+  extends: .build-plugin-dind
+
+build-py37-vdk-properties-fs:
+  extends: .build-vdk-properties-fs
+  image: "python:3.7"
+
+build-py311-vdk-properties-fs:
+  extends: .build-vdk-properties-fs
+  image: "python:3.11"
+
+release-vdk-properties-fs:
+  variables:
+    PLUGIN_NAME: vdk-properties-fs
+  extends: .release-plugin

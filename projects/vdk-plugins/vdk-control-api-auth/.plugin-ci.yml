@@ -1,0 +1,28 @@
+# Copyright 2021-2023 VMware, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+image: "python:3.7"
+
+.build-vdk-control-api-auth:
+  variables:
+    PLUGIN_NAME: vdk-control-api-auth
+  extends: .build-plugin
+
+build-py37-vdk-control-api-auth:
+  extends: .build-vdk-control-api-auth
+  image: "python:3.7"
+
+build-py311-vdk-control-api-auth:
+  extends: .build-vdk-control-api-auth
+  image: "python:3.11"
+
+build-vdk-control-api-auth-on-vdk-core-release:
+  variables:
+    PLUGIN_NAME: vdk-control-api-auth
+  extends: .build-plugin-on-vdk-core-release
+  image: "python:3.9"
+
+release-vdk-control-api-auth:
+  variables:
+    PLUGIN_NAME: vdk-control-api-auth
+  extends: .release-plugin
